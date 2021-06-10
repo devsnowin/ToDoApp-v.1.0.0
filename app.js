@@ -131,6 +131,7 @@ app.post("/delete", (req, res) => {
 
 });
 
+//Express route parameter (creating custom todo lists) 
 app.get("/:customListName", (req, res) => {
     const customListName = _.capitalize(req.params.customListName);
     List.findOne({ name: customListName }, (err, foundList) => {
@@ -155,12 +156,6 @@ app.get("/:customListName", (req, res) => {
             }
         }
     });
-});
-
-//New page => About
-
-app.get("/about", (req, res) => {
-    res.render("about");
 });
 
 
