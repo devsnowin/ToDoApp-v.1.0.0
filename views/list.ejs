@@ -10,7 +10,7 @@
     <div class="box">
         <form class="item" action="/" method="POST">
             <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-            <button type="submit" name="button" value=<%= listTitle %>>+</button>
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
         </form>
 
         <% listItems.forEach((item) => { %>
@@ -20,6 +20,7 @@
                         <p>
                             <%= item.name %>
                         </p>
+                        <input type="hidden" name="list" value="<%= listTitle %>">
                     </div>
                 </form>
         <% }) %>
